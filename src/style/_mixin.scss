@@ -1,0 +1,7 @@
+$defaultSize: 1200px;
+
+@mixin inner {
+    width: $defaultSize;
+    margin: 0 auto;
+    background: tomato;
+}
