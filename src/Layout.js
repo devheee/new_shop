@@ -1,12 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Nav from "./pages/Nav";
 
-const Layout = () => {
+import logo from "./images/top_logo.png";
+
+const Layout = ({ categoryItm }) => {
     return (
-        <>
-            <Nav />
+        <div className="Wrap inner">
+            <header className="header">
+                <h1><Link to={`/`}> <img src={logo} alt="" /></Link></h1>
+            </header>
+            <Nav categoryItm={categoryItm} />
             <Outlet />
-        </>
+        </div>
     )
 }
 

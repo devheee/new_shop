@@ -1,7 +1,16 @@
-$defaultSize: 1200px;
+$defaultSize: 1410px;
+$border : 1px solid #f1f1f1;
 
 @mixin inner {
     width: $defaultSize;
     margin: 0 auto;
-    background: tomato;
+}
+
+@mixin Itm {
+    border: $border;
+    padding: 10px;
+}
+
+@mixin List($display) {
+    display: $display;
 }
