@@ -5,9 +5,15 @@ const Itm = ({ shopData }) => {
     // itm === shopData.id;
     const Itm = shopData.find(it => String(it.id) === itm)
     return (
-        <figure className="itm">
-            Itm : {Itm.name}
-        </figure>
+        <>
+            {
+                Itm &&
+                <figure className="itm">
+                    Itm : {Itm.name}
+                </figure>
+            }
+        </>
+
     )
 }
 
