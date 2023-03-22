@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Nav = ({ categoryItm }) => {
+
     return (
         <nav className="Nav gnb">
             <ul>
@@ -9,7 +10,7 @@ const Nav = ({ categoryItm }) => {
                 {
                     categoryItm.map((it, idx) => {
                         return (
-                            <li key={idx}><Link to={`${it}`}>{it}</Link></li>
+                            <li key={idx}><Link to={`/${it}`}>{it}</Link></li>
                         )
                     })
                 }
