@@ -1,6 +1,16 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Cart = ({ shopData, cart, setCart }) => {
+    const [sw, setW] = useState([]);
+    const getKr = async () => {
+        const w = await axios.get('https://api.manana.kr/exchange/rate.json')
+        setW(w.data);
+    }
+
+    useEffect(() => {
+        getKr()
+    }, []);
 
     // const allPrice = Number(cart[0].price) + Number(cart[1].price);
     const allPrice = cart.reduce((current, next) => current + Number(next.price * next.num), 0);
@@ -31,7 +41,8 @@ const Cart = ({ shopData, cart, setCart }) => {
             <h2>
                 합계 :
                 {
-                    allPrice
+                    allPrice &&
+                    parseInt(allPrice * sw[1]?.rate).toLocaleString()
                 }
             </h2>
         </>

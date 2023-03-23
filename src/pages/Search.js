@@ -23,13 +23,10 @@ const Search = () => {
         <div>
             <form onSubmit={searchHandler}>
                 <input type="text" onChange={inputHandler} />
-                <button>SEARCH</button>
+                <button>
+                    <i className="xi-search"></i>
+                </button>
             </form>
-            <button onClick={() => navigate(-1)}>뒤로가기</button>
-            <button onClick={() => navigate('/')}>홈으로가기</button>
-            {
-                search
-            }
         </div>
     )
 }

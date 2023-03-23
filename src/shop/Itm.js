@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 const Itm = ({ shopData, cart, setCart }) => {
     const { itm } = useParams();
@@ -9,17 +9,26 @@ const Itm = ({ shopData, cart, setCart }) => {
     const addCart = () => {
         // cart page 로 이동해라...
         // cart 배열에다가 여기 아이템을 담고...
-        setCart([
-            ...cart,
-            {
-                id: Itm.id,
-                name: Itm.name,
-                price: Itm.price,
-                desc: Itm.description,
-                img: Itm.api_featured_image,
-                num: 1
-            }
-        ])
+        const match = cart.find(it => it.id == Itm.id)
+        console.log(match)
+        let option;
+        if (match) {
+            alert('장바구니에 있음...')
+            option = cart.map(it => it.id === match.id ? { ...it, num: it.num + 1 } : it);
+        } else {
+            option = [
+                ...cart,
+                {
+                    id: Itm.id,
+                    name: Itm.name,
+                    price: Itm.price,
+                    desc: Itm.description,
+                    img: Itm.api_featured_image,
+                    num: 1
+                }
+            ]
+        }
+        setCart(option)
         GO('/cart');
     }
 

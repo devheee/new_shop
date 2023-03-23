@@ -30,3 +30,9 @@ body {
 p {
     word-break: keep-all;
 }
+
+// 슬라이드 반짝이는거 제거
+.slick-track,
+.slick-slide {
+    transition-delay: 300ms;
+}

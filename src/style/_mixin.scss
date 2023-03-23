@@ -1,16 +1,15 @@
-$defaultSize: 1410px;
-$border : 1px solid #f1f1f1;
-
-@mixin inner {
-    width: $defaultSize;
-    margin: 0 auto;
+@mixin button($bg, $bd, $ol) {
+    background: $bg;
+    border: $bd;
+    outline: $ol;
 }
 
-@mixin Itm {
-    border: $border;
-    padding: 10px;
+@mixin position($position, $top, $right, $bottom, $left, $zIndex: auto) {
+    position: $position;
+    inset: $top $right $bottom $left;
+    z-index: $zIndex;
 }
 
-@mixin List($display) {
-    display: $display;
+@mixin background($img, $h, $v) {
+    background: url($img) no-repeat $h $v/cover;
 }

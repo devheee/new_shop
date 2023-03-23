@@ -6,7 +6,8 @@ const SearchResult = ({ shopData }) => {
 
     //{shopData} 에서 {name}에 r포함된 거를 찾아서 새배열을 만들기... 
 
-    const searchResult = shopData.filter(it => it.name.toUpperCase().includes(r.toUpperCase()));
+    const searchResult = shopData.filter(it => it.name.toUpperCase().includes(r.toUpperCase()) || it.description?.toUpperCase().includes(r.toUpperCase()));
+
 
     // 설명 부분에 키워드가 포함된 것도 찾아주게...;
 

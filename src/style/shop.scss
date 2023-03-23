@@ -2,64 +2,160 @@
 @import './font';
 @import './variable';
 @import './mixin';
+@import './basic';
 
 body {
     font-family: 'Roboto', 'Noto Sans KR', sans-serif;
 }
 
-.itm {
-    figure {
-        @include Itm;
-        margin: 20px 0 30px 0;
+.header {
+    @include position(fixed, 0, 0, auto, 0, 999);
+    background: transparent;
+    height: 100px;
+    align-items: center;
+    border-bottom: $line;
+    transition: 0.5s;
 
-        img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+    &.on {
+        background: #fff;
+        border-bottom: none;
+    }
+
+    h1 {
+        position: absolute;
+        top: 0;
+        left: 80px;
+        line-height: 100px;
+    }
+
+    .service {
+        position: absolute;
+        top: 0;
+        right: 80px;
+        line-height: 100px;
+
+        align-items: center;
+
+        button {
+            @include button(transparent, none, none);
+            font-size: 22px;
+            vertical-align: middle;
+            margin: 0 0 0 5px;
+        }
+
+        i.cart {
+            position: relative;
+            font-size: 30px;
+            margin: 0 0 0 10px;
+
+            span {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                padding: 5px;
+                background-color: $mc;
+                color: $gc;
+                font-size: 12px;
+                border-radius: 5px;
+            }
         }
     }
 
-    strong {
-        display: block;
-        margin: 0 0 30px 0;
-        min-height: 60px;
-        font-size: 15px;
-        font-weight: 500;
-    }
-
-    p {
-        display: block;
-        font-size: 14px;
+    .gnb {
+        ul {
+            display: flex;
+            gap: 30px;
+            font-size: 14px;
+        }
     }
 }
 
-.list {
-    @include List(grid);
-    @include inner;
-    gap: $gap*4 $gap*2;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
+.MainSlide {
+    .itm {
+        position: relative;
+        height: 150vh;
 
-.header {
-    position: relative;
+        .slogan {
+            @include position(absolute, 50%, auto, auto, 50%, auto);
+            transform: translate(-50%, -50%);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            >* {
+                display: block;
+                font-style: normal;
+                margin: 0 0 10px 0;
+                color: $gc;
+                text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+            }
 
-    height: 120px;
-}
+            em {
+                font-size: 14px;
+                text-transform: uppercase;
+            }
 
-.Nav {
-    display: flex;
-    height: 100px;
-    align-items: center;
-    justify-content: center;
-    background: $subColor;
+            span {
+                font-size: 30px;
+                font-weight: 700;
+            }
 
-    ul {
-        display: flex;
-        gap: $gap * 2;
+            strong {
+                font-size: 18px;
+                font-weight: 300;
+                margin: 0 0 40px 0;
+            }
+
+            a {
+                display: inline-block;
+                padding: 6px 15px;
+                background: #333;
+                font-size: 15px;
+                text-transform: uppercase;
+
+                &:hover {
+                    background: transparent;
+                    border: 1px solid #333;
+                    padding: 5px 15px;
+                }
+            }
+        }
+
+
+        &.itm01 {
+            @include background('../../public/images/main01.jpg', center, center)
+        }
+
+        &.itm02 {
+            @include background('../../public/images/main02.jpg', center, center)
+        }
+
+        &.itm03 {
+            @include background('../../public/images/main03.jpg', center, center)
+        }
     }
 
+    .slick-dots {
+        @include position(absolute, auto, auto, 100px, 50%, auto);
+        transform: translate(-50%, 0);
+
+        >* {
+            display: inline-block;
+
+            button {
+                width: 100px;
+                height: 5px;
+                background: $gc;
+                margin: 0 2px;
+
+                border: none;
+                outline: none;
+                font-size: 0;
+                cursor: pointer;
+            }
+        }
+
+        >*.slick-active {
+            button {
+                background: $mc;
+            }
+        }
+    }
 }

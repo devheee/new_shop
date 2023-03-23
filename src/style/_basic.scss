@@ -1,0 +1,13 @@
+.inner {
+    width: $w;
+    margin: 0 auto;
+}
+
+._lg {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+._lf {
+    display: flex;
+}
