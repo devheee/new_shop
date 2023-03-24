@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 
-const ListAll = ({ shopData, sw }) => {
+const MainList = ({ shopData, sw, cate }) => {
+
+    // 카테고리가 포함된 새배열 map, filter, concat;
+    // arry1 + arry2 : arry1.concat(arry2);
+    // [...arry1, ...arry2]
+
+    const list = shopData.filter(it => it.category === cate);
     return (
-        <div className="CateList inner">
-            <div className="CateTitle">
-                <h2>all</h2>
+        <div className="MainList inner">
+            <div className="MainTitle">
+                <h2>{cate}</h2>
             </div>
             <ul className="list _lg">
                 {
-                    shopData.map(it => {
+                    list.map(it => {
                         return (
                             <li key={it.id} className="itm">
                                 <Link to={`/detail/${it.id}`}>
@@ -34,4 +40,4 @@ const ListAll = ({ shopData, sw }) => {
     )
 }
 
-export default ListAll;
+export default MainList;

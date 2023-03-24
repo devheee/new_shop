@@ -73,7 +73,7 @@ body {
 .MainSlide {
     .itm {
         position: relative;
-        height: 150vh;
+        height: 100vh;
 
         .slogan {
             @include position(absolute, 50%, auto, auto, 50%, auto);
@@ -156,6 +156,118 @@ body {
             button {
                 background: $mc;
             }
+        }
+    }
+}
+
+
+.CateList {
+    padding: 300px 0 100px 0;
+
+    .CateTitle {
+        margin: 0 0 30px 0;
+        padding: 100px 0;
+        border-bottom: $line;
+        text-align: center;
+    }
+
+}
+
+.SlideList {
+    position: relative;
+    padding: $sp;
+
+    .list {
+        margin: 0 -10px;
+    }
+
+    .itm {
+        padding: 0 10px;
+    }
+
+    .arrow {
+        @include position(absolute, 50%, auto, auto, 50%);
+        border: none;
+        background: transparent;
+        font-size: 0;
+        width: 50px;
+        height: 50px;
+        border-left: $line;
+        border-top: $line;
+        cursor: pointer;
+
+        &.prev {
+            transform: translate(-50%, -50%) rotate(-45deg);
+            margin: 0 0 0 -700px;
+        }
+
+        &.next {
+            transform: translate(-50%, -50%) rotate(135deg);
+            margin: 0 0 0 700px;
+        }
+    }
+
+    .slick-dots {
+        margin: 20px 0 0 0;
+        text-align: center;
+
+        &>* {
+            display: inline-block;
+        }
+
+        &>*.slick-active {
+            button {
+                background: $mc;
+            }
+
+        }
+
+        button {
+            border: none;
+            background: $gc;
+            font-size: 0;
+            width: 30px;
+            height: 5px;
+            margin: 0 2px;
+        }
+    }
+}
+
+
+.mainTab {
+    h2 {
+
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+        padding: 100px 0 20px 0;
+
+        &::after {
+            content: "";
+            display: block;
+            margin: 1rem auto;
+            width: 50px;
+            height: 1px;
+            background-color: #999;
+        }
+    }
+
+    p {
+        text-align: center;
+        font-size: 15px;
+        font-weight: 300;
+        margin: 0 0 30px 0;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        gap: 4px;
+
+        &>* {
+            display: inline-block;
+            background: $gc;
+            padding: 5px 15px;
         }
     }
 }

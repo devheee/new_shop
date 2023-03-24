@@ -1,14 +1,30 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
+import Slide from 'react-slick';
+import "slick-carousel/slick/slick.css";
 
-const ListAll = ({ shopData, sw }) => {
+const MainSlideList = ({ shopData, sw, cate }) => {
+
+    // 카테고리가 포함된 새배열 map, filter, concat;
+    // arry1 + arry2 : arry1.concat(arry2);
+    // [...arry1, ...arry2]
+
+    const list = shopData.filter(it => it.category === cate);
+
+    const option = {
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        arrows: false,
+        dots: true,
+    }
+
+    const slide = useRef(null);
+
     return (
-        <div className="CateList inner">
-            <div className="CateTitle">
-                <h2>all</h2>
-            </div>
-            <ul className="list _lg">
+        <div className="SlideList inner">
+            <Slide className="list" {...option} ref={slide}>
                 {
-                    shopData.map(it => {
+                    list.map(it => {
                         return (
                             <li key={it.id} className="itm">
                                 <Link to={`/detail/${it.id}`}>
@@ -29,9 +45,11 @@ const ListAll = ({ shopData, sw }) => {
                         )
                     })
                 }
-            </ul>
-        </div>
+            </Slide>
+            <button onClick={() => slide.current.slickPrev()} className="arrow prev">뒤로</button>
+            <button onClick={() => slide.current.slickNext()} className="arrow next">앞으로</button>
+        </div >
     )
 }
 
-export default ListAll;
+export default MainSlideList;
