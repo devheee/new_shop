@@ -20,7 +20,7 @@ const Search = () => {
     }
 
     return (
-        <div>
+        <div className="Search">
             <form onSubmit={searchHandler}>
                 <input type="text" onChange={inputHandler} />
                 <button>

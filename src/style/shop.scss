@@ -13,7 +13,7 @@ body {
     background: transparent;
     height: 100px;
     align-items: center;
-    border-bottom: $line;
+    // border-bottom: $line;
     transition: 0.5s;
 
     &.on {
@@ -33,7 +33,7 @@ body {
         top: 0;
         right: 80px;
         line-height: 100px;
-
+        gap: 20px;
         align-items: center;
 
         button {
@@ -46,7 +46,7 @@ body {
         i.cart {
             position: relative;
             font-size: 30px;
-            margin: 0 0 0 10px;
+            cursor: pointer;
 
             span {
                 position: absolute;
@@ -61,11 +61,13 @@ body {
         }
     }
 
-    .gnb {
-        ul {
-            display: flex;
-            gap: 30px;
-            font-size: 14px;
+    .Search {
+        input {
+            background: transparent;
+            outline: none;
+            border: 0;
+            border-bottom: 1px solid #333;
+            width: 150px;
         }
     }
 }

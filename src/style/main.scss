@@ -80,3 +80,56 @@
     height: 100%;
     background: url(../../public/images/pc_main03.jpg) no-repeat center center/cover;
 }
+
+.bar {
+    z-index: 999;
+
+    ul {
+        li i {
+
+            font-size: 25px;
+            vertical-align: middle;
+        }
+    }
+}
+
+
+
+.cover {
+    position: fixed;
+    inset: 0 0 auto auto;
+    background: #fff;
+    color: #333;
+    z-index: 990;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* display: none; */
+    width: 0;
+    overflow: hidden;
+    transition: 0.8s;
+    line-height: 2;
+}
+
+.cover.on {
+    width: 20%;
+    height: 100%;
+}
+
+.cover ul {
+    height: 100vh;
+    margin-top: 200px;
+    /* transform: translate(140%, 20%); */
+}
+
+.cover ul li {
+    font-size: 26px;
+    font-weight: 300;
+}
+
+.cover ul li:hover {
+    color: #002029;
+    transition: 1s;
+}

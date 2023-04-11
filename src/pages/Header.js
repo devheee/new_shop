@@ -3,6 +3,7 @@ import Search from "./Search";
 import logo from "../images/logo.png";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
+import Cover from "./Cover";
 
 const Header = ({ cart, categoryItm }) => {
 
@@ -26,13 +27,14 @@ const Header = ({ cart, categoryItm }) => {
 
     return (
         <header className={`header _lf ${toggle ? 'on' : ''}`}>
-            <h1><Link to={`/`}><img src={logo} alt="" /></Link></h1>
-            <Nav categoryItm={categoryItm} />
+            <h1><a href="/new_shop"><img src={logo} alt="" /></a></h1>
             <div className="service _lf">
                 <Search />
                 <i className="xi-cart-o cart">
                     <span>{cart.length}</span></i>
+                <Cover categoryItm={categoryItm} />
             </div>
+
         </header>
     )
 }
