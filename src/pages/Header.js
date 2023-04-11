@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Search from "./Search";
-import logo from "../images/top_logo.png";
+import logo from "../images/logo.png";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
 

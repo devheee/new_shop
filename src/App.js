@@ -8,8 +8,9 @@ import CateList from "./shop/CateList";
 import Itm from "./shop/Itm";
 import SearchResult from "./shop/SearchResult";
 import Cart from "./shop/Cart";
-import Main from "./pages/Main";
+import Fullpage from "./pages/Main";
 import MainSlideList from "./shop/MainSlideList";
+import Main from "./pages/Main";
 
 
 

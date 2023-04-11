@@ -235,12 +235,12 @@ body {
 
 
 .mainTab {
-    h2 {
 
+    h2 {
         text-align: center;
         font-size: 22px;
         font-weight: 700;
-        padding: 100px 0 20px 0;
+        padding: 250px 0 20px 0;
 
         &::after {
             content: "";
@@ -268,6 +268,48 @@ body {
             display: inline-block;
             background: $gc;
             padding: 5px 15px;
+        }
+    }
+}
+
+.footer {
+    background: #f9f9f9;
+
+    &>ul {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .copy ul {
+        color: #999;
+        font-size: 14px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.375;
+        font-weight: 300;
+
+
+        li {
+            position: relative;
+
+            &:not(:last-child)::before {
+                content: "";
+                position: absolute;
+                top: 2px;
+                right: -4.5px;
+                width: 1px;
+                height: 13px;
+                background: #ddd;
+            }
+
+            a:hover {
+                color: #333;
+            }
         }
     }
 }
