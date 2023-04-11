@@ -240,7 +240,7 @@ body {
         text-align: center;
         font-size: 22px;
         font-weight: 700;
-        padding: 250px 0 20px 0;
+        padding: 150px 0 20px 0;
 
         &::after {
             content: "";
@@ -275,12 +275,36 @@ body {
 .footer {
     background: #f9f9f9;
 
+    strong {
+        display: block;
+        font-size: 30px;
+        font-weight: 700;
+        margin: 0 0 20px 0;
+    }
+
+    p {
+        line-height: 1.3;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
     &>ul {
         display: flex;
-        gap: 30px;
+        // gap: 30px;
         align-items: center;
         justify-content: center;
         padding: 20px 0;
+        font-size: 15px;
+
+        li~li::before {
+            content: "";
+            display: inline-block;
+            margin: 0 15px;
+            background: #777;
+            width: 1px;
+            height: 15px;
+            vertical-align: bottom;
+        }
     }
 
     .copy ul {
