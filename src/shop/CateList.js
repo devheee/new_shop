@@ -38,6 +38,7 @@ const CateList = ({ shopData, sw }) => {
 
     return (
         <div className="CateList inner">
+
             <div className="CateTitle">
                 <h2>{cate}</h2>
                 <ul>
@@ -73,9 +74,9 @@ const CateList = ({ shopData, sw }) => {
                                                 }} ></li>)
                                         }
                                     </ul>
-                                    <p className="itmDesc">
+                                    {/* <p className="itmDesc">
                                         {it.description?.substr(0, 100)} {it.description?.length > 100 ? '...' : ''}
-                                    </p>
+                                    </p> */}
                                     <div className="itmPrice">
                                         <span>{parseInt(it.price * sw).toLocaleString()}</span> 원
                                     </div>
