@@ -103,33 +103,48 @@
     z-index: 990;
 
     display: flex;
-    // justify-content: center;
-    // align-items: center;
+
 
     /* display: none; */
     width: 0;
     overflow: hidden;
     transition: 0.8s;
     line-height: 2;
+    border-left: 1px solid #ddd;
 }
 
 .cover.on {
     width: 20%;
-    height: 100%;
 }
 
-.cover ul {
+.cover>ul {
     height: 100vh;
-    margin-top: 200px;
+    margin: 100px 0 0 100px;
     /* transform: translate(140%, 20%); */
 }
 
-.cover ul li {
-    font-size: 26px;
-    font-weight: 300;
+.cover>ul {
+    .all {
+        font-size: 20px;
+        margin: 0 0 20px 0;
+    }
 }
 
-.cover ul li:hover {
-    color: #002029;
-    transition: 1s;
+.cover>ul li {
+    font-size: 18px;
+    font-weight: 300;
+
+    p {
+        font-size: 20px;
+        font-weight: 500
+    }
+
+    &:last-child {
+        margin: 0 0 20px 0;
+    }
+}
+
+.bar .icon {
+    font-size: 27px;
+    vertical-align: middle;
 }
