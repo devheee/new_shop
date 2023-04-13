@@ -9,7 +9,7 @@ const Layout = ({ shopData, categoryItm, cart }) => {
             <Header cart={cart} categoryItm={categoryItm} />
             <Outlet />
             <Footer />
-            <RightBanner />
+            {/* <RightBanner /> */}
         </div>
     )
 }

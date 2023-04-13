@@ -4,13 +4,13 @@ import { Link, useParams } from "react-router-dom";
 
 const CateList = ({ shopData, sw }) => {
     const { cate } = useParams();
-
+    const { product } = useParams();
     // 카테고리가 포함된 새배열 map, filter, concat;
     // arry1 + arry2 : arry1.concat(arry2);
     // [...arry1, ...arry2]
 
 
-    const list = shopData.filter(it => it.category === cate);
+    const list = shopData.filter(it => it.product_type === cate);
     const [sort, setSort] = useState(list);
 
     const priceDown = () => {
@@ -32,14 +32,13 @@ const CateList = ({ shopData, sw }) => {
     }
 
 
-    console.log(list)
-
     useEffect(() => {
         setSort(list)
-    }, [cate, shopData])
+    }, [product, shopData])
 
     return (
         <div className="CateList inner">
+
             <div className="CateTitle">
                 <h2>{cate}</h2>
                 <ul>
@@ -75,9 +74,9 @@ const CateList = ({ shopData, sw }) => {
                                                 }} ></li>)
                                         }
                                     </ul>
-                                    <p className="itmDesc">
+                                    {/* <p className="itmDesc">
                                         {it.description?.substr(0, 100)} {it.description?.length > 100 ? '...' : ''}
-                                    </p>
+                                    </p> */}
                                     <div className="itmPrice">
                                         <span>{parseInt(it.price * sw).toLocaleString()}</span> 원
                                     </div>

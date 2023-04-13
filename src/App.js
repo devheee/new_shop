@@ -41,6 +41,7 @@ const App = () => {
     }, []);
 
     const originalItm = shopData.map(it => it.category);
+    const productItm = shopData.map(it => it.product_type);
     const filterItm = originalItm.filter(Boolean)
     const categoryItm = [...new Set(filterItm)]
 

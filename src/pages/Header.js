@@ -30,8 +30,10 @@ const Header = ({ cart, categoryItm }) => {
             <h1><a href="/new_shop"><img src={logo} alt="" /></a></h1>
             <div className="service _lf">
                 <Search />
-                <i className="xi-cart-o cart">
-                    <span>{cart.length}</span></i>
+                <Link to="cart">
+                    <i className="xi-cart-o cart">
+                        <span>{cart.length}</span></i>
+                </Link>
                 <Cover categoryItm={categoryItm} />
             </div>
 
