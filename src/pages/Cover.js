@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
 import ListAll from "../shop/ListAll";
 
@@ -12,6 +12,13 @@ const Cover = ({ categoryItm }) => {
     const toggleMenu = () => {
         setOn(isOpen => !isOpen);
     }
+
+    const { pathname } = useLocation();
+    console.log(pathname);
+
+    useEffect(() => {
+        setOn(false)
+    }, [pathname])
 
     return (
         <>

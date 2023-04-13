@@ -14,31 +14,30 @@ const CateList = ({ shopData, sw }) => {
     const [sort, setSort] = useState(list);
 
     const priceDown = () => {
-        setSort(list.sort((a, b) => a.price - b.price))
+        setSort([...list.sort((a, b) => a.price - b.price)])
     }
 
     const priceUp = () => {
-        setSort(list.sort((a, b) => b.price - a.price))
+        setSort([...list.sort((a, b) => b.price - a.price)])
     }
 
     // 업데이트날짜를 숫자로 바꾸는 Date() 사용하면 됨
     const newProduct = () => {
-        setSort(list.sort((a, b) => b.id - a.id))
+        setSort([...list.sort((a, b) => b.id - a.id)])
     }
 
     // 인기를 판단할 데이터가 없어 name.length 로 진행
     const bestProduct = () => {
-        setSort(list.sort((a, b) => b.name.length - a.name.length))
+        setSort([...list.sort((a, b) => b.name.length - a.name.length)])
     }
 
 
     useEffect(() => {
-        setSort(list)
-    }, [product, shopData])
+        setSort([...list.sort((a, b) => b.name.length - a.name.length)])
+    }, [product, shopData, cate])
 
     return (
         <div className="CateList inner">
-
             <div className="CateTitle">
                 <h2>{cate}</h2>
                 <ul>

@@ -57,8 +57,8 @@ const App = () => {
                 </Route>
                 <Route path="/all" element={<ListAll shopData={shopData} sw={sw} />} />
                 <Route path="/:cate" element={<CateList shopData={shopData} sw={sw} />} />
-                <Route path="detail/:itm" element={<Itm shopData={shopData} cart={cart} setCart={setCart} />} />
-                <Route path="search" element={<SearchResult shopData={shopData} />} />
+                <Route path="detail/:itm" element={<Itm shopData={shopData} cart={cart} setCart={setCart} sw={sw} />} />
+                <Route path="search" element={<SearchResult shopData={shopData} sw={sw} />} />
                 <Route path="cart" element={<Cart shopData={shopData} cart={cart} setCart={setCart} />} />
             </Route>
         </Routes>

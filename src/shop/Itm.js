@@ -1,6 +1,6 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 
-const Itm = ({ shopData, cart, setCart }) => {
+const Itm = ({ shopData, cart, setCart, sw }) => {
     const { itm } = useParams();
     //itm === shopData.id;
     const Itm = shopData.find(it => String(it.id) === itm);
@@ -35,34 +35,42 @@ const Itm = ({ shopData, cart, setCart }) => {
 
 
     return (
-        <div className="itm--">
+        <div className="productpage">
             {
                 Itm && //객체검정... ?
-                <>
+                <div className="product_">
                     <figure>
                         <img src={Itm.api_featured_image} alt="" />
                     </figure>
-                    <strong>
-                        {Itm.name}
-                    </strong>
-                    <ul className="color">
-                        {
-                            Itm.product_colors?.map((it, idx) => <li key={idx} style={{
-                                background: it.hex_value,
-                                display: "inline-block",
-                                width: 10,
-                                height: 10,
-                                borderRadius: '50%',
-                                margin: "0 2px"
-                            }}></li>)
-                        }
-                    </ul>
-                    <p>
-                        {Itm.description?.substr(0, 100)} {Itm.description?.length > 100 ? '...' : ''}
-                    </p>
+                    <div className="desc">
+                        <strong>
+                            {Itm.name}
+                        </strong>
+                        <ul className="color">
+                            {
+                                Itm.product_colors?.map((it, idx) => <li key={idx} style={{
+                                    background: it.hex_value,
+                                    display: "inline-block",
+                                    width: 10,
+                                    height: 10,
+                                    borderRadius: '50%',
+                                    margin: "0 2px"
+                                }}></li>)
+                            }
+                        </ul>
+                        <p>
+                            {Itm.description}
+                        </p>
+                        <div className="itmPrice">
+                            <span className="price">{parseInt(Itm.price * sw).toLocaleString()}</span> <span>원</span>
+                        </div>
+                        <div className="btn">
+                            <button onClick={addCart}>장바구니</button>
+                            <button>구매하기</button>
+                        </div>
 
-                    <button onClick={addCart}>Add Cart</button>
-                </>
+                    </div>
+                </div>
             }
         </div>
 

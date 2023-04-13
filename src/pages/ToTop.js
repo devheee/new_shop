@@ -19,9 +19,7 @@ const Btn = styled.div`
     cursor: pointer;
     transition: 0.5s;
     z-index: 9999;
-    &:hover {
-        color: #ff0;
-    }
+    
     &.on {
         visibility:visible;
         opacity:1;

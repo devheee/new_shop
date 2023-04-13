@@ -32,7 +32,10 @@ const Header = ({ cart, categoryItm }) => {
                 <Search />
                 <Link to="cart">
                     <i className="xi-cart-o cart">
-                        <span>{cart.length}</span></i>
+                        {
+                            cart.length > 0 && <span>{cart.length}</span>
+                        }
+                    </i>
                 </Link>
                 <Cover categoryItm={categoryItm} />
             </div>

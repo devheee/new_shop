@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const Cart = ({ shopData, cart, setCart }) => {
     const [sw, setW] = useState([]);
@@ -9,7 +10,7 @@ const Cart = ({ shopData, cart, setCart }) => {
     }
 
     useEffect(() => {
-        getKr()
+        getKr();
     }, []);
 
     // const allPrice = Number(cart[0].price) + Number(cart[1].price);
@@ -24,28 +25,37 @@ const Cart = ({ shopData, cart, setCart }) => {
         setCart(newCart)
     }
     return (
-        <>
+        <div className="cartin">
             <h1>장바구니</h1>
-            {
-                cart.map(it => <li key={it.id}>
-                    {it.id}
-                    {it.name}
-                    {it.desc}
-                    {it.price}
-                    {it.num}
-                    <button onClick={() => crarModify(it.id)}>+</button>
-                    <img src={it.img} alt="" />
-                </li>)
-            }
-
-            <h2>
-                합계 :
+            <div className="cartinner">
                 {
-                    allPrice &&
-                    parseInt(allPrice * sw[1]?.rate).toLocaleString()
+                    cart.map(it => <li key={it.id}>
+                        {/* <div>{it.id}</div> */}
+                        <div className="name">{it.name}</div>
+                        <div className="price">{parseInt(Number(it.price) * sw[1]?.rate).toLocaleString()}원</div>
+
+                        {/* {it.desc} */}
+                        <div className="add">
+                            <div>{it.num}</div>
+                            <button onClick={() => crarModify(it.id)}><AiOutlinePlus /></button>
+                        </div>
+
+                        <img src={it.img} alt="" />
+                    </li>)
                 }
-            </h2>
-        </>
+
+                <h2>
+                    총
+                    <div className="totalprice">
+                        {
+                            allPrice &&
+                            parseInt(allPrice * sw[1]?.rate).toLocaleString()
+                        }
+                    </div>
+                    원
+                </h2>
+            </div>
+        </div>
     )
 }
 
