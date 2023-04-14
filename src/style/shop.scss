@@ -395,8 +395,9 @@ body {
 }
 
 .cartin {
+    width: 1200px;
     padding: 150px 0;
-    margin: 0 80px;
+    margin: 0 auto;
 
     h1 {
         position: relative;
@@ -438,6 +439,12 @@ body {
 
             .name {
                 width: 100%;
+                font-size: 15px;
+            }
+
+            .price {
+                position: absolute;
+                left: 50%;
             }
 
 
@@ -456,19 +463,37 @@ body {
             }
 
             img {
-                max-width: 200px;
+                max-width: 100px;
+                margin: 20px 0 10px 0;
             }
         }
 
         h2 {
             position: absolute;
             right: 0;
-            padding: 15px 10px;
+            padding: 35px 10px;
+            font-size: 30px;
 
             .totalprice {
                 display: inline-block;
                 margin: 0 0 0 10px;
                 font-weight: 700;
+            }
+        }
+
+        .order {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+
+            border: 1px solid #333;
+            background: transparent;
+            padding: 10px 20px;
+            cursor: pointer;
+
+            &:hover {
+                background: #333;
+                color: #fff;
             }
         }
     }

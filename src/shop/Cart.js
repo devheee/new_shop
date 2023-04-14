@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Cart = ({ shopData, cart, setCart }) => {
     const [sw, setW] = useState([]);
@@ -31,7 +32,9 @@ const Cart = ({ shopData, cart, setCart }) => {
                 {
                     cart.map(it => <li key={it.id}>
                         {/* <div>{it.id}</div> */}
-                        <div className="name">{it.name}</div>
+                        <div className="name">
+                            <Link to={`/detail/${it.id}`}>{it.name}</Link>
+                        </div>
                         <div className="price">{parseInt(Number(it.price) * sw[1]?.rate).toLocaleString()}원</div>
 
                         {/* {it.desc} */}
@@ -54,6 +57,8 @@ const Cart = ({ shopData, cart, setCart }) => {
                     </div>
                     원
                 </h2>
+
+                <button className="order">주문하기</button>
             </div>
         </div>
     )

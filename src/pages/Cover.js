@@ -7,14 +7,14 @@ import ListAll from "../shop/ListAll";
 const Cover = ({ categoryItm }) => {
     const [on, setOn] = useState(false);
     // const [toggleMenu, setToggleMenu] = useState(false)
-    const [toggleBar, setToggleBar] = useState(true)
+    //  const [toggleBar, setToggleBar] = useState(true)
 
     const toggleMenu = () => {
-        setOn(isOpen => !isOpen);
+        setOn(!on);
     }
 
     const { pathname } = useLocation();
-    console.log(pathname);
+    // console.log(pathname);
 
     useEffect(() => {
         setOn(false)
@@ -25,9 +25,9 @@ const Cover = ({ categoryItm }) => {
             <nav className="bar">
                 <ul>
                     <li>
-                        <Link onClick={() => toggleMenu()}>
+                        <span onClick={() => toggleMenu()} style={{ cursor: "pointer" }}>
                             {on ? <HiOutlineX className="icon" /> : <HiMenu className="icon" />}
-                        </Link>
+                        </span>
                     </li>
                 </ul>
             </nav>
