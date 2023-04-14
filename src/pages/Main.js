@@ -13,7 +13,11 @@ import Footer from './Footer';
 
 const Main = ({ shopData, sw }) => {
     const anchors = [];
-    const TabData = ['liquid', 'palette', 'concealer']
+    const TabData = [
+        { data: 'liquid', name: '인기' },
+        { data: 'palette', name: '아이섀도우' },
+        { data: 'concealer', name: '컨실러' },
+    ]
 
     return (
         <ReactFullpage
@@ -59,7 +63,7 @@ const Main = ({ shopData, sw }) => {
                                 <ul className="menu">
                                     {
                                         TabData.map((it, idx) => { // idx = 0,1,2
-                                            return <Link to={`/tab/${it}`}>{it}</Link>
+                                            return <Link to={`/tab/${it.data}`}>{it.name}</Link>
                                         })
                                     }
                                 </ul>

@@ -34,9 +34,9 @@ const MainSlideList = ({ shopData, sw, cate }) => {
                                     <strong className="itmTitle">
                                         {it.name}
                                     </strong>
-                                    <p className="itmDesc">
+                                    {/* <p className="itmDesc">
                                         {it.description?.substr(0, 100)} {it.description?.length > 100 ? '...' : ''}
-                                    </p>
+                                    </p> */}
                                     <div className="itmPrice">
                                         <span>{parseInt(it.price * sw).toLocaleString()}</span> 원
                                     </div>
