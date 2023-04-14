@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { AiOutlinePlus } from "react-icons/ai";
+import { BsPlusLg } from "react-icons/bs";
+import { TfiMinus } from "react-icons/tfi";
 import { Link } from "react-router-dom";
 
 const Cart = ({ shopData, cart, setCart }) => {
@@ -25,6 +26,11 @@ const Cart = ({ shopData, cart, setCart }) => {
         // [it ,it, new, it]
         setCart(newCart)
     }
+    const crarModifyminus = (id) => {
+        const newCart = cart.map(it => it.id === id && it.num > 0 ? { ...it, num: it.num - 1 } : it);
+        console.log(newCart);
+        setCart(newCart)
+    }
     return (
         <div className="cartin">
             <h1>장바구니</h1>
@@ -39,8 +45,9 @@ const Cart = ({ shopData, cart, setCart }) => {
 
                         {/* {it.desc} */}
                         <div className="add">
+                            <button onClick={() => crarModifyminus(it.id)}><TfiMinus /></button>
                             <div>{it.num}</div>
-                            <button onClick={() => crarModify(it.id)}><AiOutlinePlus /></button>
+                            <button onClick={() => crarModify(it.id)}><BsPlusLg /></button>
                         </div>
 
                         <img src={it.img} alt="" />
