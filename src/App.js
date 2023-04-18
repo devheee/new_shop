@@ -50,8 +50,8 @@ const App = () => {
         <Routes>
             <Route path="/" element={<Layout categoryItm={categoryItm} cart={cart} />}>
                 <Route path="/" element={<Main shopData={shopData} sw={sw} />} >
-                    <Route index element={<MainSlideList cate={'liquid'} sw={sw} shopData={shopData} />}></Route>
-                    <Route path="tab/liquid" element={<MainSlideList cate={'liquid'} sw={sw} shopData={shopData} />}></Route>
+                    <Route index element={<MainSlideList cate={'lipstick'} sw={sw} shopData={shopData} />}></Route>
+                    <Route path="tab/lipstick" element={<MainSlideList cate={'lipstick'} sw={sw} shopData={shopData} />}></Route>
                     <Route path="tab/palette" element={<MainSlideList cate={'palette'} sw={sw} shopData={shopData} />}></Route>
                     <Route path="tab/concealer" element={<MainSlideList cate={'concealer'} sw={sw} shopData={shopData} />}></Route>
                 </Route>

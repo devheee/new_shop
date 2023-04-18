@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../style/main.scss'
-import { Link, Outlet, Route, Routes } from "react-router-dom";
+import { Link, NavLink, Outlet, Route, Routes } from "react-router-dom";
 import MainList from "../shop/MainList";
 import MainVisual from "./MainVisual";
 import ReactDOM from 'react-dom';
@@ -12,12 +12,14 @@ import Footer from './Footer';
 
 
 const Main = ({ shopData, sw }) => {
+
     const anchors = [];
     const TabData = [
-        { data: 'liquid', name: '인기' },
+        { data: 'lipstick', name: '립' },
         { data: 'palette', name: '아이섀도우' },
         { data: 'concealer', name: '컨실러' },
     ]
+
 
     return (
         <ReactFullpage
@@ -63,7 +65,7 @@ const Main = ({ shopData, sw }) => {
                                 <ul className="menu">
                                     {
                                         TabData.map((it, idx) => { // idx = 0,1,2
-                                            return <Link to={`/tab/${it.data}`}>{it.name}</Link>
+                                            return <NavLink to={`/tab/${it.data}`} activeClassName="active">{it.name}</NavLink>
                                         })
                                     }
                                 </ul>

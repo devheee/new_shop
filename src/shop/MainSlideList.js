@@ -15,7 +15,7 @@ const MainSlideList = ({ shopData, sw, cate }) => {
         slidesToShow: 6,
         slidesToScroll: 6,
         arrows: false,
-        dots: true,
+        dots: false,
     }
 
     const slide = useRef(null);
